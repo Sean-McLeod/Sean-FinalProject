@@ -4,8 +4,9 @@
 # Created on June 2021
 # This is the prison escape game
 
-import pygame
 import sys
+
+import pygame
 
 
 def first_game_scene(screen):
@@ -65,7 +66,11 @@ def start_screen(screen):
         mouse_position = pygame.mouse.get_pos()
 
         # create button(surface, color, position & dimensions)
-        button = pygame.draw.rect(screen, white, [rect_x_position, rect_y_position, text_size * 2.5, text_size])
+        button = pygame.draw.rect(
+            screen,
+            white,
+            [rect_x_position, rect_y_position, text_size * 2.5, text_size],
+        )
 
         # upload text
         screen.blit(text, (rect_x_position + 20, rect_y_position + 20))
