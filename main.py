@@ -5,7 +5,7 @@ import pygame
 
 from ButtonClass import ButtonClass
 from CheckPrisonerEvents import CheckPrisonerEvents
-from PrisonerClass import PrisonerClass
+from Sprites import Sprites
 
 
 def first_game_scene():
@@ -20,7 +20,7 @@ def first_game_scene():
     prisoner = pygame.image.load("Sprites/prisoners/prisoner.png")
 
     # objects
-    my_prisoner = PrisonerClass(
+    my_prisoner = Sprites(
         prisoner,
         prisoner_x,
         prisoner_y,
@@ -48,7 +48,7 @@ def first_game_scene():
         my_prisoner.prisoner_move = (
             key_is_down, key_left, key_right, key_up, key_down, key_is_up
         )
-        
+
         # choose what image the prisoner should be(there are 10 images for animation)
         # my_prisoner.prisoner_animation()
         # upload prisoner image
