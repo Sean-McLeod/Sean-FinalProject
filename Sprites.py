@@ -65,7 +65,7 @@ class Sprites:
         print("hey!")
 
     def prisoner_move(
-            self, key_is_down, key_left, key_right, key_up, key_down, key_is_up
+        self, key_is_down, key_left, key_right, key_up, key_down, key_is_up
     ):
         if key_is_down:
             if key_left:
