@@ -1,6 +1,7 @@
-import pygame
 import sys
+
 import constants
+import pygame
 
 from ButtonClass import ButtonClass
 from CheckPrisonerEvents import CheckPrisonerEvents
@@ -19,7 +20,14 @@ def first_game_scene():
     prisoner = pygame.image.load("Sprites/prisoners/prisoner.png")
 
     # objects
-    my_prisoner = PrisonerClass(prisoner, prisoner_x, prisoner_y, constants.PRISONER_X_SPEED, constants.PRISONER_Y_SPEED, screen)
+    my_prisoner = PrisonerClass(
+        prisoner,
+        prisoner_x,
+        prisoner_y,
+        constants.PRISONER_X_SPEED,
+        constants.PRISONER_Y_SPEED,
+        screen,
+    )
     my_check_event = CheckPrisonerEvents()
 
     running = True
@@ -28,9 +36,19 @@ def first_game_scene():
         screen.blit(background, (0, 0))
 
         # get events
-        key_is_down, key_left, key_right, key_up, key_down, key_is_up = my_check_event.check_events()
-        # move prisoner
-        my_prisoner.prisoner_move(key_is_down, key_left, key_right, key_up, key_down, key_is_up)
+        (
+            key_is_down,
+            key_left,
+            key_right,
+            key_up,
+            key_down,
+            key_is_up,
+        ) = my_check_event.check_events()
+
+        my_prisoner.prisoner_move = (
+            key_is_down, key_left, key_right, key_up, key_down, key_is_up
+        )
+        
         # choose what image the prisoner should be(there are 10 images for animation)
         # my_prisoner.prisoner_animation()
         # upload prisoner image
@@ -68,7 +86,9 @@ def start_screen():
     background = pygame.image.load("Backgrounds/StartScreen.jpg")
 
     # create object
-    my_button = ButtonClass(constants.WHITE, button_x, button_y, button_width, button_height, "START")
+    my_button = ButtonClass(
+        constants.WHITE, button_x, button_y, button_width, button_height, "START"
+    )
 
     # Game loop
     running = True
