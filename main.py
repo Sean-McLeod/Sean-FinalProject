@@ -2,7 +2,6 @@ import sys
 
 import constants
 import pygame
-
 from ButtonClass import ButtonClass
 from CheckPrisonerEvents import CheckPrisonerEvents
 from Sprites import Sprites
@@ -51,7 +50,7 @@ def first_game_scene():
             key_right,
             key_up,
             key_down,
-            key_is_up
+            key_is_up,
         )
 
         # choose what image the prisoner should be(there are 10 images for animation)
