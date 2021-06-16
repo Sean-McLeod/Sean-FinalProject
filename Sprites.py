@@ -15,14 +15,16 @@ class Sprites:
             self._sprite_x, self._sprite_y, self.width, self.height
         )
         self.current_sprite = 0
-        self.prisoners = [pygame.image.load("Sprites/prisoners/prisoner2.png"),
-                          pygame.image.load("Sprites/prisoners/prisoner3.png"), pygame.image.load(
-                "Sprites/prisoners/prisoner4.png"),
-                          pygame.image.load("Sprites/prisoners/prisoner5.png"), pygame.image.load(
-                "Sprites/prisoners/prisoner6.png"),
-                          pygame.image.load("Sprites/prisoners/prisoner7.png"), pygame.image.load(
-                "Sprites/prisoners/prisoner8.png"),
-                          pygame.image.load("Sprites/prisoners/prisoner9.png")]
+        self.prisoners = [
+            pygame.image.load("Sprites/prisoners/prisoner2.png"),
+            pygame.image.load("Sprites/prisoners/prisoner3.png"),
+            pygame.image.load("Sprites/prisoners/prisoner4.png"),
+            pygame.image.load("Sprites/prisoners/prisoner5.png"),
+            pygame.image.load("Sprites/prisoners/prisoner6.png"),
+            pygame.image.load("Sprites/prisoners/prisoner7.png"),
+            pygame.image.load("Sprites/prisoners/prisoner8.png"),
+            pygame.image.load("Sprites/prisoners/prisoner9.png"),
+        ]
         self.prisoner_x_change = 0
         self.prisoner_y_change = 0
 
@@ -62,7 +64,9 @@ class Sprites:
     def print_anything(self):
         print("hey!")
 
-    def prisoner_move(self, key_is_down, key_left, key_right, key_up, key_down, key_is_up):
+    def prisoner_move(
+            self, key_is_down, key_left, key_right, key_up, key_down, key_is_up
+    ):
         if key_is_down:
             if key_left:
                 self.prisoner_x_change = -self.get_x_speed()
