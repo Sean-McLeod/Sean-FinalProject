@@ -46,7 +46,12 @@ def first_game_scene():
         ) = my_check_event.check_events()
 
         my_prisoner.prisoner_move = (
-            key_is_down, key_left, key_right, key_up, key_down, key_is_up
+            key_is_down,
+            key_left,
+            key_right,
+            key_up,
+            key_down,
+            key_is_up
         )
 
         # choose what image the prisoner should be(there are 10 images for animation)
