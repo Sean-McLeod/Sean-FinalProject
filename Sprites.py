@@ -1,5 +1,6 @@
 import pygame
 
+
 class Sprites:
     def __init__(self, sprite, sprite_x, sprite_y, x_speed, y_speed, screen):
         self._sprite = sprite
@@ -10,7 +11,9 @@ class Sprites:
         self._screen = screen
         self.width = self._sprite.get_width()
         self.height = self._sprite.get_height()
-        self.moving_rect = pygame.Rect(self._sprite_x, self._sprite_y, self.width, self.height)
+        self.moving_rect = pygame.Rect(
+            self._sprite_x, self._sprite_y, self.width, self.height
+        )
         self.current_sprite = 0
         self.prisoners = [pygame.image.load("Sprites/prisoners/prisoner2.png"),
                           pygame.image.load("Sprites/prisoners/prisoner3.png"), pygame.image.load(
