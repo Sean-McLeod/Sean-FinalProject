@@ -5,7 +5,6 @@
 # This is the ship class
 
 import constants
-from bullets import BulletClass
 from monsters import Monsters
 
 
