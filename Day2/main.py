@@ -4,7 +4,7 @@ import constants
 import pygame
 from ButtonClass import ButtonClass
 from CheckPrisonerEvents import CheckPrisonerEvents
-from Maps import Maps
+# from Maps import Maps
 from PrisonerClass import PrisonerClass
 
 
@@ -18,7 +18,7 @@ def first_game_scene():
 
     # create sprites
     prisoner = pygame.image.load("Sprites/prisoners/prisoner.png")
-    tile = pygame.image.load("Sprites/cell.png")
+    # tile = pygame.image.load("Sprites/cell.png")
 
     # objects
     my_prisoner = PrisonerClass(
