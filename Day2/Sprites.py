@@ -1,6 +1,3 @@
-import sys
-
-import constants
 import pygame
 
 
