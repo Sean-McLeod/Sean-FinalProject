@@ -55,7 +55,7 @@ wwwww wwww
                     self._screen.blit(
                         self._sprite,
                         (
-                            nth_character * self._tile_x_distance
+                            nth_character * self._tile_x_distance,
                             nth_line * self._tile_y_distance,
                         ),
                     )
