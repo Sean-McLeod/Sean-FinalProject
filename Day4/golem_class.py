@@ -5,7 +5,6 @@
 # This is the golem class
 
 import pygame
-
 from monsters import Monsters
 
 
