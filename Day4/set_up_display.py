@@ -106,35 +106,12 @@ class SetUpDisplay:
             self._screen,
         )
         my_door = Sprites(
-            door,
-            constants.SECOND_DOOR_X,
-            constants.SECOND_DOOR_Y,
-            0,
-            0,
-            self._screen
+            door, constants.SECOND_DOOR_X, constants.SECOND_DOOR_Y, 0, 0, self._screen
         )
-        my_cell_map = Maps(
-            tile,
-            tile_x_increment,
-            tile_y_increment,
-            self._screen,
-            2
-        )
+        my_cell_map = Maps(tile, tile_x_increment, tile_y_increment, self._screen, 2)
         my_chest = Sprites(
-            chest,
-            constants.CHEST_X,
-            constants.CHEST_Y,
-            0,
-            0,
-            self._screen
+            chest, constants.CHEST_X, constants.CHEST_Y, 0, 0, self._screen
         )
-        my_key = Sprites(
-            key,
-            constants.KEY_X,
-            constants.KEY_Y,
-            0,
-            0,
-            self._screen
-        )
+        my_key = Sprites(key, constants.KEY_X, constants.KEY_Y, 0, 0, self._screen)
 
         return my_prisoner, my_door, my_cell_map, my_chest, my_key
