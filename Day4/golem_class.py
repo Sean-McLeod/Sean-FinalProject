@@ -40,4 +40,3 @@ class GolemClass(Monsters):
         super().set_current_sprite(super().get_current_sprite() + 1)
         if super().get_current_sprite() >= len(self._golem_walk_right):
             super().set_current_sprite(0)
-
