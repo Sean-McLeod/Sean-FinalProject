@@ -66,7 +66,9 @@ def third_game_scene():
         # fire a laser, if we have enough power (have not used up all the lasers)
         for laser_number in range(len(lasers)):
             if lasers[laser_number].x < 0:
-                lasers[laser_number].move(my_ship.get_sprite_x(), my_ship.get_sprite_y())
+                lasers[laser_number].move(
+                    my_ship.get_sprite_x(), my_ship.get_sprite_y()
+                )
                 break
 
         if single_laser >= constants.BULLET_SHOOT_RATE:
