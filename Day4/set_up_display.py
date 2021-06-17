@@ -6,7 +6,6 @@
 
 import constants
 import pygame
-
 from golem_class import GolemClass
 from maps import Maps
 from monsters import Monsters
