@@ -157,7 +157,14 @@ def start_screen():
     background = pygame.image.load("Backgrounds/StartScreen.jpg")
 
     # create object
-    my_button = ButtonClass(constants.WHITE, button_x, button_y, button_width, button_height, "START")
+    my_button = ButtonClass(
+        constants.WHITE,
+        button_x,
+        button_y,
+        button_width,
+        button_height,
+        "START"
+    )
 
     # Game loop
     running = True
