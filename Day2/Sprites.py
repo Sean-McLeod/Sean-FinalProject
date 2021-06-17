@@ -15,7 +15,9 @@ class Sprites:
         self._screen = screen
         self.width = self._sprite.get_width()
         self.height = self._sprite.get_height()
-        self.moving_rect = pygame.Rect(self._sprite_x, self._sprite_y, self.width, self.height)
+        self.moving_rect = pygame.Rect(
+            self._sprite_x, self._sprite_y, self.width, self.height
+        )
         self.current_sprite = 0
 
     def sprite_upload(self):
@@ -31,7 +33,9 @@ class Sprites:
         # get sprite's size
         sprite_size = self._sprite.get_size()
         # increase size of sprite and rect
-        self._sprite = pygame.transform.scale(self._sprite, (sprite_size[0] * multiplier, sprite_size[1] * multiplier))
+        self._sprite = pygame.transform.scale(
+            self._sprite, (sprite_size[0] * multiplier, sprite_size[1] * multiplier)
+        )
         self.moving_rect.size = self._sprite.get_size()
 
     def check_collision(self, sprite1, sprite2):
