@@ -38,7 +38,9 @@ class PrisonerClass(Sprites):
         if not self._looking_right:
             super().flip_sprite()
 
-    def prisoner_move(self, key_is_down, key_left, key_right, key_up, key_down, key_is_up):
+    def prisoner_move(
+        self, key_is_down, key_left, key_right, key_up, key_down, key_is_up
+    ):
         if key_is_down:
             if key_left:
                 self._is_animating = True
