@@ -21,8 +21,14 @@ def first_game_scene():
     tile = pygame.image.load("Sprites/cell.png")
 
     # objects
-    my_prisoner = PrisonerClass(prisoner, prisoner_x, prisoner_y, constants.PRISONER_X_SPEED,
-                                constants.PRISONER_Y_SPEED, screen)
+    my_prisoner = PrisonerClass(
+        prisoner,
+        prisoner_x,
+        prisoner_y,
+        constants.PRISONER_X_SPEED,
+        constants.PRISONER_Y_SPEED,
+        screen,
+    )
     my_cell_map = Maps(tile, 60, 50, screen, 1)
     my_check_event = CheckPrisonerEvents()
 
@@ -38,9 +44,18 @@ def first_game_scene():
         # my_cell_map.build_map(prisoner_rect)
 
         # get events
-        key_is_down, key_left, key_right, key_up, key_down, key_is_up = my_check_event.check_events()
+        (
+            key_is_down,
+            key_left,
+            key_right,
+            key_up,
+            key_down,
+            key_is_up,
+        ) = my_check_event.check_events()
         # move prisoner
-        my_prisoner.prisoner_move(key_is_down, key_left, key_right, key_up, key_down, key_is_up)
+        my_prisoner.prisoner_move(
+            key_is_down, key_left, key_right, key_up, key_down, key_is_up
+        )
         # choose what image the prisoner should be(there are 10 images for animation)
         my_prisoner.prisoner_animation()
         # change sprite size of prisoner
@@ -82,7 +97,9 @@ def start_screen():
     background = pygame.image.load("Backgrounds/StartScreen.jpg")
 
     # create object
-    my_button = ButtonClass(constants.WHITE, button_x, button_y, button_width, button_height, "START")
+    my_button = ButtonClass(
+        constants.WHITE, button_x, button_y, button_width, button_height, "START"
+    )
 
     # Game loop
     running = True
