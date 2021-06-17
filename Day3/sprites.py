@@ -35,7 +35,7 @@ class Sprites:
         sprite_size = self._sprite.get_size()
         # increase size of sprite and rect
         self._sprite = pygame.transform.scale(
-            self._sprite,(sprite_size[0] * multiplier, sprite_size[1] * multiplier)
+            self._sprite, (sprite_size[0] * multiplier, sprite_size[1] * multiplier)
         )
         self.rect.size = self._sprite.get_size()
 
