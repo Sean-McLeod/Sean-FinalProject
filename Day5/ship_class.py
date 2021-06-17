@@ -4,7 +4,6 @@
 # Created on June 2021
 # This is the ship class
 
-import constants
 from monsters import Monsters
 
 
