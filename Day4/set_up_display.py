@@ -103,7 +103,7 @@ class SetUpDisplay:
             prisoner_y,
             constants.PRISONER_X_SPEED,
             constants.PRISONER_Y_SPEED,
-            self._screen
+            self._screen,
         )
         my_door = Sprites(
             door,
