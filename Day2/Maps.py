@@ -28,5 +28,5 @@ wwwwwwwwww  ww""".splitlines()
     #                                   (self._tile_x_distance, self._tile_y_distance))
     #                 self.new_rect = pygame.Rect(self._tile_x_distance, self._tile_y_distance,
     #                                             self._width, self._height)
-    
+
     # pygame.draw.rect(self._screen, (0, 0, 255), self.new_rect)
