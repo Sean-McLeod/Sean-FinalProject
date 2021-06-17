@@ -4,8 +4,8 @@
 # Created on June 2021
 # This is the display class
 
-import pygame
 import constants
+import pygame
 
 from golem_class import GolemClass
 from maps import Maps
