@@ -29,20 +29,20 @@ class Maps:
         self._game_scene_one_map = """
 
 
-    
+
 
 
 wwwwwwwwww  ww""".splitlines()
 
-        self._game_scene_two_map = """ 
+        self._game_scene_two_map = """
  rr
  rwww w
  r     r
 wwwwwww
-     r 
- r   r 
+     r
+ r   r
  wwww ww
- 
+
 wwwww wwww
 """.splitlines()
         self._maps.append(self._game_scene_one_map)
