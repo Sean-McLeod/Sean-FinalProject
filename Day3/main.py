@@ -158,12 +158,7 @@ def start_screen():
 
     # create object
     my_button = ButtonClass(
-        constants.WHITE,
-        button_x,
-        button_y,
-        button_width,
-        button_height,
-        "START"
+        constants.WHITE, button_x, button_y, button_width, button_height, "START"
     )
 
     # Game loop
