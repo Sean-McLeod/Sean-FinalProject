@@ -94,7 +94,6 @@ class SetUpDisplay:
         door = pygame.image.load(constants.CASTLE_DOOR_IMAGE)
         chest = pygame.image.load(constants.CHEST_IMAGE)
         key = pygame.image.load(constants.KEY_IMAGE)
-        shadow = pygame.image.load(constants.SHADOW_IMAGE)
 
         # create object
         my_prisoner = PrisonerClass(
