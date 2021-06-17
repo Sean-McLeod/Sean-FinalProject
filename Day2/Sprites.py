@@ -1,8 +1,7 @@
-import pygame
-
 import sys
 
 import constants
+import pygame
 
 
 class Sprites:
