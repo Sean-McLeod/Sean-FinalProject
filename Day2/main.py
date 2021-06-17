@@ -29,7 +29,7 @@ def first_game_scene():
         constants.PRISONER_Y_SPEED,
         screen,
     )
-    my_cell_map = Maps(tile, 60, 50, screen, 1)
+    # my_cell_map = Maps(tile, 60, 50, screen, 1)
     my_check_event = CheckPrisonerEvents()
 
     running = True
@@ -38,7 +38,7 @@ def first_game_scene():
         screen.blit(background, (0, 0))
 
         # get rect
-        prisoner_rect = my_prisoner.get_rect()
+        # prisoner_rect = my_prisoner.get_rect()
 
         # build map
         # my_cell_map.build_map(prisoner_rect)
