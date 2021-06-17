@@ -19,7 +19,9 @@ class Sprites:
         self._screen = screen
         self._width = self._sprite.get_width()
         self._height = self._sprite.get_height()
-        self._rect = pygame.Rect(self._sprite_x, self._sprite_y, self._width, self._height)
+        self._rect = pygame.Rect(
+            self._sprite_x, self._sprite_y, self._width, self._height
+        )
         self._current_sprite = 0
 
     def sprite_upload(self):
@@ -35,7 +37,9 @@ class Sprites:
         # get sprite's size
         sprite_size = self._sprite.get_size()
         # increase size of sprite and _rect
-        self._sprite = pygame.transform.scale(self._sprite, (sprite_size[0] * multiplier, sprite_size[1] * multiplier))
+        self._sprite = pygame.transform.scale(
+            self._sprite, (sprite_size[0] * multiplier, sprite_size[1] * multiplier)
+        )
         self._rect.size = self._sprite.get_size()
 
     def check_collision(self, sprite1, sprite2):
@@ -54,13 +58,16 @@ class Sprites:
             self._current_sprite = 0
 
     def keep_inside_screen(self):
-        if self._rect.x >= constants.SCREEN_WIDTH - self._sprite.get_width() or self._rect.x <= 0\
-           or self._rect.y >= constants.SCREEN_HEIGHT - self._sprite.get_width() or self._rect.y <= 0:
+        if (
+            self._rect.x >= constants.SCREEN_WIDTH - self._sprite.get_width()
+            or self._rect.x <= 0
+            or self._rect.y >= constants.SCREEN_HEIGHT - self._sprite.get_width()
+            or self._rect.y <= 0
+        ):
             self._rect.clamp_ip(self._screen.get_rect())
             return True
         else:
             return False
-
 
     def get_rect(self):
         return self._rect
