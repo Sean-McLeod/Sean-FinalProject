@@ -19,11 +19,13 @@ class Maps:
         self._level = level
         self._tile_x_distance = tile_x_distance
         self._tile_y_distance = tile_y_distance
-        self._rotated_sprite = pygame.transform.rotate(self._sprite, constants.RIGHT_ANGLE)
+        self._rotated_sprite = pygame.transform.rotate(
+            self._sprite, constants.RIGHT_ANGLE
+        )
         self._rotated_width = self._rotated_sprite.get_width()
         self._rotated_height = self._rotated_sprite.get_height()
         self._new_rect = self._sprite.get_rect()
-        self._reduce_distance = self._tile_y_distance/2
+        self._reduce_distance = self._tile_y_distance / 2
         self._game_scene_one_map = """
 
 
@@ -50,15 +52,37 @@ wwwww wwww
         for nth_line, line in enumerate(self._maps[self._level - 1]):
             for nth_character, character in enumerate(line):
                 if character == "w":
-                    self._screen.blit(self._sprite, (nth_character * self._tile_x_distance, nth_line * self._tile_y_distance))
-                    new_rect = pygame.Rect(nth_character * self._tile_x_distance, nth_line * self._tile_y_distance, self._width, self._height)
+                    self._screen.blit(
+                        self._sprite,
+                        (
+                            nth_character * self._tile_x_distance
+                            nth_line * self._tile_y_distance,
+                        ),
+                    )
+                    new_rect = pygame.Rect(
+                        nth_character * self._tile_x_distance,
+                        nth_line * self._tile_y_distance,
+                        self._width,
+                        self._height,
+                    )
                     # pygame.draw.rect(self._screen, (0, 0, 255), self.new_rect)
                     # check collision
                     if new_rect.colliderect(sprite2):
                         print("collided with map")
                 elif character == "r":
-                    rotated_rect = pygame.Rect(nth_character * self._tile_x_distance, nth_line * self._tile_y_distance - self._reduce_distance, self._rotated_width, self._rotated_height)
-                    self._screen.blit(self._rotated_sprite, (nth_character * self._tile_x_distance, nth_line * self._tile_y_distance - self._reduce_distance))
+                    rotated_rect = pygame.Rect(
+                        nth_character * self._tile_x_distance,
+                        nth_line * self._tile_y_distance - self._reduce_distance,
+                        self._rotated_width,
+                        self._rotated_height,
+                    )
+                    self._screen.blit(
+                        self._rotated_sprite,
+                        (
+                            nth_character * self._tile_x_distance,
+                            nth_line * self._tile_y_distance - self._reduce_distance,
+                        ),
+                    )
                     # check collision
                     if rotated_rect.colliderect(sprite2):
                         print("collided with map")
