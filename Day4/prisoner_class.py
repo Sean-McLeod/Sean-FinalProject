@@ -5,7 +5,6 @@
 # This is the prisoner class
 
 import pygame
-
 from sprites import Sprites
 
 
