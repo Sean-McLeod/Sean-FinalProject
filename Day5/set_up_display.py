@@ -139,7 +139,8 @@ class SetUpDisplay:
             prisoner_x,
             prisoner_y,
             constants.PRISONER_X_SPEED,
-            constants.PRISONER_Y_SPEED, self._screen,
+            constants.PRISONER_Y_SPEED,
+            self._screen,
         )
         my_ship = ShipClass(
             ship,
