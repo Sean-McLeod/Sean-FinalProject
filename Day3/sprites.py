@@ -4,8 +4,8 @@
 # Created on June 2021
 # This is the monster class
 
-import pygame
 import constants
+import pygame
 
 
 class Sprites:
@@ -34,7 +34,9 @@ class Sprites:
         # get sprite's size
         sprite_size = self._sprite.get_size()
         # increase size of sprite and rect
-        self._sprite = pygame.transform.scale(self._sprite, (sprite_size[0] * multiplier, sprite_size[1] * multiplier))
+        self._sprite = pygame.transform.scale(
+            self._sprite,(sprite_size[0] * multiplier, sprite_size[1] * multiplier)
+        )
         self.rect.size = self._sprite.get_size()
 
     def check_collision(self, sprite1, sprite2):
@@ -53,8 +55,12 @@ class Sprites:
             self.current_sprite = 0
 
     def keep_inside_screen(self):
-        if self.rect.x >= constants.SCREEN_WIDTH - self._sprite.get_width() or self.rect.x <= 0\
-           or self.rect.y >= constants.SCREEN_HEIGHT - self._sprite.get_width() or self.rect.y <= 0:
+        if (
+            self.rect.x >= constants.SCREEN_WIDTH - self._sprite.get_width()
+            or self.rect.x <= 0
+            or self.rect.y >= constants.SCREEN_HEIGHT - self._sprite.get_width()
+            or self.rect.y <= 0
+        ):
             self.rect.clamp_ip(self._screen.get_rect())
             return True
         else:
