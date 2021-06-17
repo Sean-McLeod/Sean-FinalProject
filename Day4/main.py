@@ -27,7 +27,13 @@ def second_game_scene():
 
     # set up objects
     my_setup = SetUpDisplay(screen)
-    my_prisoner, my_door, my_cell_map, my_chest, my_key = my_setup.set_up_game_scene_two()
+    (
+        my_prisoner,
+        my_door,
+        my_cell_map,
+        my_chest,
+        my_key,
+    ) = my_setup.set_up_game_scene_two()
 
     # get ready to check prisoner events
     my_prisoner_event = CheckPrisonerEvents()
@@ -51,8 +57,17 @@ def second_game_scene():
         my_cell_map.build_map(prisoner_rect)
 
         # move prisoner
-        key_is_down, key_left, key_right, key_up, key_down, key_is_up = my_prisoner_event.check_events()
-        my_prisoner.prisoner_move(key_is_down, key_left, key_right, key_up, key_down, key_is_up)
+        (
+            key_is_down,
+            key_left,
+            key_right,
+            key_up,
+            key_down,
+            key_is_up,
+        ) = my_prisoner_event.check_events()
+        my_prisoner.prisoner_move(
+            key_is_down, key_left, key_right, key_up, key_down, key_is_up
+        )
 
         my_prisoner.prisoner_animation()
         # flip prisoner
@@ -101,7 +116,14 @@ def first_game_scene():
 
     # create objects
     my_setup = SetUpDisplay(screen)
-    my_prisoner, my_golem, my_golem_two, my_dragon, my_cell_map, my_door = my_setup.set_up_game_scene_one()
+    (
+        my_prisoner,
+        my_golem,
+        my_golem_two,
+        my_dragon,
+        my_cell_map,
+        my_door,
+    ) = my_setup.set_up_game_scene_one()
 
     # check prisoner event
     my_check_event = CheckPrisonerEvents()
@@ -199,7 +221,9 @@ def start_screen():
     background = pygame.image.load("Backgrounds/StartScreen.jpg")
 
     # create object
-    my_button = ButtonClass(constants.WHITE, button_x, button_y, button_width, button_height, "START")
+    my_button = ButtonClass(
+        constants.WHITE, button_x, button_y, button_width, button_height, "START"
+    )
 
     # Game loop
     running = True
