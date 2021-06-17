@@ -4,9 +4,8 @@
 # Created on June 2021
 # This is the map class
 
-import pygame
-
 import constants
+import pygame
 
 
 class Maps:
