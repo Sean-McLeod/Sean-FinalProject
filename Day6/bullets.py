@@ -1,3 +1,8 @@
+#!/usr/bin/env python3
+
+# Created by Sean McLeod
+# Created on June 2021
+# This is the bullet class
 
 import constants
 import pygame
