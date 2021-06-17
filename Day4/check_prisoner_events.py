@@ -4,8 +4,9 @@
 # Created on June 2021
 # This is the shadow class
 
-import pygame
 import sys
+
+import pygame
 
 
 class CheckPrisonerEvents:
