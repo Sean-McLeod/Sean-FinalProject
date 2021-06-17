@@ -40,7 +40,9 @@ def third_game_scene():
             key_down,
             key_is_up,
         ) = my_prisoner_event.check_events()
-        my_prisoner.prisoner_move(key_is_down, key_left, key_right, key_up, key_down, key_is_up)
+        my_prisoner.prisoner_move(
+            key_is_down, key_left, key_right, key_up, key_down, key_is_up
+        )
 
         # choose what image the prisoner should be(there are 10 images for animation)
         my_prisoner.prisoner_animation()
