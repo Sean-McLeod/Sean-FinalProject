@@ -38,4 +38,11 @@ class CheckPrisonerEvents:
             if event.type == pygame.QUIT:
                 sys.exit()
 
-        return self.key_is_down, self.key_left, self.key_right, self.key_up, self.key_down, self.key_is_up
+        return (
+            self.key_is_down,
+            self.key_left,
+            self.key_right,
+            self.key_up,
+            self.key_down,
+            self.key_is_up,
+        )
