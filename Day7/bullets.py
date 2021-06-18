@@ -45,7 +45,7 @@ class BulletClass:
             pygame.draw.rect(self._screen, constants.WHITE, bullet)
 
     def create_bullets(
-            self, first_bullet_list, second_bullet_list, first_rect, second_rect
+        self, first_bullet_list, second_bullet_list, first_rect, second_rect
     ):
         bullet = pygame.Rect(
             first_rect.x + first_rect.width / 2,
