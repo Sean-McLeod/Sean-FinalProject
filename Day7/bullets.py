@@ -3,10 +3,11 @@
 # Created by Sean McLeod
 # Created on June 2021
 # This is the bullet class
-from pygame import mixer
+
 
 import constants
 import pygame
+from pygame import mixer
 
 
 class BulletClass:
@@ -43,16 +44,22 @@ class BulletClass:
         for bullet in second_bullet_list:
             pygame.draw.rect(self._screen, constants.WHITE, bullet)
 
-    def create_bullets(self, first_bullet_list, second_bullet_list, first_rect, second_rect):
+    def create_bullets(
+            self, first_bullet_list, second_bullet_list, first_rect, second_rect
+    ):
         bullet = pygame.Rect(
-            first_rect.x + first_rect.width / 2, first_rect.y + first_rect.height,
-            constants.BULLET_WIDTH, constants.BULLET_HEIGHT
+            first_rect.x + first_rect.width / 2,
+            first_rect.y + first_rect.height,
+            constants.BULLET_WIDTH,
+            constants.BULLET_HEIGHT,
         )
         first_bullet_list.append(bullet)
 
         bullet = pygame.Rect(
-            second_rect.x + second_rect.width / 2, second_rect.y - second_rect.height / 2 + 10,
-            constants.BULLET_WIDTH, constants.BULLET_HEIGHT
+            second_rect.x + second_rect.width / 2,
+            second_rect.y - second_rect.height / 2 + 10,
+            constants.BULLET_WIDTH,
+            constants.BULLET_HEIGHT,
         )
         second_bullet_list.append(bullet)
 
