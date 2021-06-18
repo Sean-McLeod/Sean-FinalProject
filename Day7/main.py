@@ -8,12 +8,10 @@ import sys
 
 import constants
 import pygame
-
 from bullets import BulletClass
-from game_features import ButtonClass, TextClass, GetModifiedButton, SoundOnOff
 from check_prisoner_events import CheckPrisonerEvents
+from game_features import ButtonClass, TextClass, GetModifiedButton, SoundOnOff
 from pygame import mixer
-
 from set_up_scenes import SetUpScenes
 
 
@@ -36,7 +34,12 @@ def you_win():
         screen.blit(main_text, (constants.MIDDLE_X - 100, constants.TITLE_Y))
 
         # create button
-        re_button.draw_button(screen, constants.BACK_BUTTON_TEXT_SIZE, constants.FONT_CORBEL, constants.BUTTON_OUTLINE)
+        re_button.draw_button(
+            screen,
+            constants.BACK_BUTTON_TEXT_SIZE,
+            constants.FONT_CORBEL,
+            constants.BUTTON_OUTLINE,
+        )
 
         # get mouse position
         mouse_position = pygame.mouse.get_pos()
@@ -71,7 +74,12 @@ def you_lose():
         screen.blit(main_text, (constants.MIDDLE_X - 100, constants.TITLE_Y))
 
         # create button
-        re_button.draw_button(screen, constants.BACK_BUTTON_TEXT_SIZE, constants.FONT_CORBEL, constants.BUTTON_OUTLINE)
+        re_button.draw_button(
+            screen,
+            constants.BACK_BUTTON_TEXT_SIZE,
+            constants.FONT_CORBEL,
+            constants.BUTTON_OUTLINE,
+        )
 
         # get mouse position
         mouse_position = pygame.mouse.get_pos()
@@ -108,11 +116,16 @@ def credits_page():
         # display title
         screen.blit(title_text, (constants.MIDDLE_X - 100, constants.TITLE_Y))
         # display text
-        my_long_text.sentence_generate(screen, constants.CREDIT_TEXT, (190, 150), main_font)
+        my_long_text.sentence_generate(
+            screen, constants.CREDIT_TEXT, (190, 150), main_font
+        )
 
         # create button
         back_button.draw_button(
-            screen, constants.BACK_BUTTON_TEXT_SIZE, constants.FONT_CORBEL, constants.BUTTON_OUTLINE
+            screen,
+            constants.BACK_BUTTON_TEXT_SIZE,
+            constants.FONT_CORBEL,
+            constants.BUTTON_OUTLINE,
         )
 
         for event in pygame.event.get():
@@ -151,11 +164,16 @@ def about_page():
         # display title
         screen.blit(title_text, (constants.MIDDLE_X - 100, constants.TITLE_Y))
         # display text
-        my_long_text.sentence_generate(screen, constants.ABOUT_TEXT, (100, 200), main_font)
+        my_long_text.sentence_generate(
+            screen, constants.ABOUT_TEXT, (100, 200), main_font
+        )
 
         # create button
         back_button.draw_button(
-            screen, constants.BACK_BUTTON_TEXT_SIZE, constants.FONT_CORBEL, constants.BUTTON_OUTLINE
+            screen,
+            constants.BACK_BUTTON_TEXT_SIZE,
+            constants.FONT_CORBEL,
+            constants.BUTTON_OUTLINE,
         )
 
         # get mouse position
@@ -177,7 +195,12 @@ def option_page():
 
     # create objects
     my_button = GetModifiedButton()
-    about_button, sound_button, credits_button, back_button = my_button.get_options_scene_buttons()
+    (
+        about_button,
+        sound_button,
+        credits_button,
+        back_button,
+    ) = my_button.get_options_scene_buttons()
     sound_toggle = SoundOnOff()
 
     # text
@@ -194,11 +217,21 @@ def option_page():
         screen.blit(text_surface, (constants.MIDDLE_X - 120, constants.TITLE_Y))
 
         # create button
-        about_button.draw_button(screen, text_size, constants.FONT_CORBEL, constants.BUTTON_OUTLINE)
-        sound_button.draw_button(screen, text_size, constants.FONT_CORBEL, constants.BUTTON_OUTLINE)
-        credits_button.draw_button(screen, text_size, constants.FONT_CORBEL, constants.BUTTON_OUTLINE)
-        back_button.draw_button(screen, constants.BACK_BUTTON_TEXT_SIZE, constants.FONT_CORBEL,
-                                constants.BUTTON_OUTLINE)
+        about_button.draw_button(
+            screen, text_size, constants.FONT_CORBEL, constants.BUTTON_OUTLINE
+        )
+        sound_button.draw_button(
+            screen, text_size, constants.FONT_CORBEL, constants.BUTTON_OUTLINE
+        )
+        credits_button.draw_button(
+            screen, text_size, constants.FONT_CORBEL, constants.BUTTON_OUTLINE
+        )
+        back_button.draw_button(
+            screen,
+            constants.BACK_BUTTON_TEXT_SIZE,
+            constants.FONT_CORBEL,
+            constants.BUTTON_OUTLINE,
+        )
 
         for event in pygame.event.get():
             # get mouse position
@@ -293,14 +326,19 @@ def third_game_scene():
         if cool_down_counter > constants.BULLET_SHOOT_RATE:
             cool_down_counter = 0
             my_bullet.create_bullets(
-                first_ship_bullets, second_ship_bullets, my_ship.get_rect(), my_ship_two.get_rect()
+                first_ship_bullets,
+                second_ship_bullets,
+                my_ship.get_rect(),
+                my_ship_two.get_rect(),
             )
 
         # draw the bullets
         my_bullet.draw(first_ship_bullets, second_ship_bullets)
 
         # check bullet events
-        did_shoot = my_bullet.handle_bullets(first_ship_bullets, second_ship_bullets, prisoner_rect)
+        did_shoot = my_bullet.handle_bullets(
+            first_ship_bullets, second_ship_bullets, prisoner_rect
+        )
 
         # move ship
         my_ship.ship_move()
@@ -511,8 +549,12 @@ def first_game_scene():
         my_golem_two.sprite_upload()
 
         # check collision
-        if my_dragon.attack(prisoner_rect) or my_golem.attack(prisoner_rect) or my_golem_two.attack(prisoner_rect)\
-                or did_map_collide:
+        if (
+            my_dragon.attack(prisoner_rect)
+            or my_golem.attack(prisoner_rect)
+            or my_golem_two.attack(prisoner_rect)
+            or did_map_collide
+        ):
             hit_sound = mixer.Sound(constants.HIT_SOUND)
             electrocute = mixer.Sound(constants.ELECTRIC_SOUND)
             if did_map_collide:
