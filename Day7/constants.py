@@ -84,13 +84,13 @@ BACK_BUTTON_TEXT = "Back"
 BACK_BUTTON_TEXT_SIZE = 30
 RE_BUTTON_TEXT = "Re?"
 ABOUT_TEXT = (
-    "This game is created on 2021 June 18th,"
+    "This game is created on 2021 June 18th,\n"
     "by Sean McLeod."
     "\n\nAvoid obstacles and escape prison to WIN!"
 )
 CREDIT_TEXT = (
     "DESIGN:\n"
-    "made by https://www.freepik.com https://www.flaticon.com/title=Flaticon>www.flaticon.com\n" \
+    "made by https://www.freepik.com https://www.flaticon.com/title=Flaticon>www.flaticon.com\n"
     "Prisoner https://opengameart.org/users/balmer\n"
     "Dragon https://opengameart.org/users/redshrike"
     "Golem https://opengameart.org/content/lpc-golem\n"
@@ -99,7 +99,7 @@ CREDIT_TEXT = (
     "Sean McLeod\n\n"
     "SOUNDS:\n"
     "hit_sound https://opengameart.org/users/starninjas\n"
-    "Ice and Electricity Magic by Iwan 'qubodup' Gabovitch http://opengameart.org/users/qubodup\n" \
+    "Ice and Electricity Magic by Iwan 'qubodup' Gabovitch http://opengameart.org/users/qubodup\n"
     "laser sound https://opengameart.org/users/dklon\n"
     "start music https://opengameart.org/users/syncopika\n"
     "Game sound https://opengameart.org/users/jobromedia"
