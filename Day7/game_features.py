@@ -131,7 +131,9 @@ class GetModifiedButton:
 
 
 class TextClass:
-    def sentence_generate(self, surface, text, position, font, color=pygame.Color(constants.BLACK)):
+    def sentence_generate(
+        self, surface, text, position, font, color=pygame.Color(constants.BLACK)
+    ):
         words = [word.split(" ") for word in text.splitlines()]  # this is a 2d array
         space = font.size(" ")[0]  # this is the space
         max_width, max_height = surface.get_size()
