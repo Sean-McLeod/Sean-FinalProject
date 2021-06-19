@@ -71,6 +71,7 @@ def credits_page():
     my_button = GetModifiedButton()
     back_button = my_button.get_back_button()
     my_long_text = TextClass()
+    set_scene = SetUpScenes(screen)
 
     # Game loop
     running = True
@@ -85,23 +86,12 @@ def credits_page():
             screen, constants.CREDIT_TEXT, (190, 150), main_font
         )
 
-        # create button
-        back_button.draw_button(
-            screen,
-            constants.BACK_BUTTON_TEXT_SIZE,
-            constants.FONT_CORBEL,
-            constants.BUTTON_OUTLINE,
-        )
+        # draw back_button
+        set_scene.draw_back_button(back_button)
 
-        for event in pygame.event.get():
-            # get mouse position
-            mouse_position = pygame.mouse.get_pos()
-
-            if event.type == pygame.QUIT:
-                sys.exit()
-            if event.type == pygame.MOUSEBUTTONDOWN:
-                if back_button.is_over(mouse_position):
-                    option_page()
+        # event handle
+        if set_scene.credit_and_about_event(back_button):
+            option_page()
 
         # refresh the screen every frame
         pygame.display.update()
@@ -117,6 +107,7 @@ def about_page():
     # object
     my_button = GetModifiedButton()
     back_button = my_button.get_back_button()
+    set_scene = SetUpScenes(screen)
 
     my_long_text = TextClass()
 
@@ -133,23 +124,12 @@ def about_page():
             screen, constants.ABOUT_TEXT, (100, 200), main_font
         )
 
-        # create button
-        back_button.draw_button(
-            screen,
-            constants.BACK_BUTTON_TEXT_SIZE,
-            constants.FONT_CORBEL,
-            constants.BUTTON_OUTLINE,
-        )
+        # draw back_button
+        set_scene.draw_back_button(back_button)
 
-        # get mouse position
-        mouse_position = pygame.mouse.get_pos()
-        for event in pygame.event.get():
-            if event.type == pygame.QUIT:
-                sys.exit()
-            if event.type == pygame.MOUSEBUTTONDOWN:
-                if back_button.is_over(mouse_position):
-                    option_page()
-                    pass
+        # event handle
+        if set_scene.credit_and_about_event(back_button):
+            option_page()
 
         # refresh the screen every frame
         pygame.display.update()
