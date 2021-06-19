@@ -7,8 +7,6 @@ import sys
 
 import constants
 import pygame
-
-
 from golem_class import GolemClass
 from maps import Maps
 from monsters import Monsters
@@ -134,7 +132,9 @@ class SetUpScenes:
 
         # create sprites
         prisoner = pygame.image.load(constants.PRISONER_IMAGE)
-        ship = pygame.transform.flip(pygame.image.load(constants.SHIP_IMAGE), False, True)
+        ship = pygame.transform.flip(
+            pygame.image.load(constants.SHIP_IMAGE), False, True
+        )
         ship_two = pygame.image.load(constants.SHIP_TWO_IMAGE)
         door = pygame.image.load(constants.DOOR_THREE)
 
