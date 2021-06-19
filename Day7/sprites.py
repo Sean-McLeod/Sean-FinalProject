@@ -58,10 +58,10 @@ class Sprites:
 
     def keep_inside_screen(self):
         if (
-                self._rect.x >= constants.SCREEN_WIDTH - self._sprite.get_width()
-                or self._rect.x <= 0
-                or self._rect.y >= constants.SCREEN_HEIGHT - self._sprite.get_height()
-                or self._rect.y <= 0
+            self._rect.x >= constants.SCREEN_WIDTH - self._sprite.get_width()
+            or self._rect.x <= 0
+            or self._rect.y >= constants.SCREEN_HEIGHT - self._sprite.get_height()
+            or self._rect.y <= 0
         ):
             self._rect.clamp_ip(self._screen.get_rect())
             return True
