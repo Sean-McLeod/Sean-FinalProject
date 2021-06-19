@@ -15,50 +15,15 @@ from pygame import mixer
 from set_up_scenes import SetUpScenes
 
 
-def you_win():
-    # text
+def did_you_win(is_win):
+    # font
     main_font = pygame.font.SysFont(constants.FONT_COMIC, constants.TITLE_SIZE)
-    main_text = main_font.render("You Win!", False, constants.BLACK)
-
-    # object
-    my_button = GetModifiedButton()
-    re_button = my_button.get_re_button()
-
-    # Game loop
-    running = True
-    while running:
-        # screen fill
-        screen.fill(constants.WHITE)
-
-        # display text
-        screen.blit(main_text, (constants.MIDDLE_X - 100, constants.TITLE_Y))
-
-        # create button
-        re_button.draw_button(
-            screen,
-            constants.BACK_BUTTON_TEXT_SIZE,
-            constants.FONT_CORBEL,
-            constants.BUTTON_OUTLINE,
-        )
-
-        # get mouse position
-        mouse_position = pygame.mouse.get_pos()
-
-        for event in pygame.event.get():
-            if event.type == pygame.QUIT:
-                sys.exit()
-            if event.type == pygame.MOUSEBUTTONDOWN:
-                if re_button.is_over(mouse_position):
-                    start_screen()
-
-        # refresh the screen every frame
-        pygame.display.update()
-
-
-def you_lose():
+    if is_win:
+        text = "You Win!"
+    else:
+        text = "You Lose!"
     # text
-    main_font = pygame.font.SysFont(constants.FONT_COMIC, constants.TITLE_SIZE)
-    main_text = main_font.render("You Lose!", False, constants.BLACK)
+    main_text = main_font.render(text, False, constants.BLACK)
 
     # object
     my_button = GetModifiedButton()
@@ -348,9 +313,9 @@ def third_game_scene():
         if my_ship.attack(prisoner_rect) or did_shoot:
             hit_sound = mixer.Sound(constants.HIT_SOUND)
             hit_sound.play()
-            you_lose()
+            did_you_win(False)
         if my_door.check_collision(door_rect, prisoner_rect):
-            you_win()
+            did_you_win(True)
         # upload sprites
         my_door.sprite_upload()
         my_prisoner.sprite_upload()
@@ -455,7 +420,7 @@ def second_game_scene():
                 electrocute.play()
             else:
                 hit_sound.play()
-            you_lose()
+            did_you_win(False)
 
         # collision detection
         if my_door.check_collision(door_rect, prisoner_rect):
@@ -562,7 +527,7 @@ def first_game_scene():
             else:
                 hit_sound.play()
             # player lost
-            you_lose()
+            did_you_win(False)
         # when prisoner gets to the door, end loop and move scene
         if my_door.check_collision(door_rect, prisoner_rect):
             second_game_scene()
