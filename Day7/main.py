@@ -10,7 +10,7 @@ import constants
 import pygame
 from bullets import BulletClass
 from check_prisoner_events import CheckPrisonerEvents
-from game_features import ButtonClass, GetModifiedButton, SoundOnOff, TextClass
+from game_features import GetModifiedButton, SoundOnOff, TextClass
 from pygame import mixer
 from set_up_scenes import SetUpScenes
 
